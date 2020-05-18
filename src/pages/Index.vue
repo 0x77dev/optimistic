@@ -28,9 +28,18 @@
         v-if="courses.error !== null"
         class="bg-primary text-white radius"
       >
-        <q-chip v-for="course in courses" :key="course.id" icon="bookmark">
-          {{ course.displayname }}
-        </q-chip>
+        <h5>Доступные курсы</h5>
+        <br />
+        <router-link
+          v-for="course in courses"
+          :key="course.id"
+          style="text-decoration: none;"
+          :to="'/course/' + course.id"
+        >
+          <q-chip icon="bookmark">
+            {{ course.displayname }}
+          </q-chip>
+        </router-link>
       </q-banner>
     </div>
     <!-- <img alt="Логотип" src="~assets/logo-full.svg" /> -->
