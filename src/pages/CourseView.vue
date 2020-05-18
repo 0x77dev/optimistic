@@ -12,6 +12,7 @@
       </q-card-section>
 
       <q-card-section>
+        <div v-html="detail.summary"></div>
         <div class="q-pa-md">
           <q-list>
             <q-item
@@ -68,7 +69,8 @@ export default {
     };
 
     const req = await fetch(
-      "https://b.optima-osvita.org/webservice/rest/server.php?moodlewsrestformat=json",
+      localStorage.baseurl +
+        "/webservice/rest/server.php?moodlewsrestformat=json",
       requestOptions
     );
 

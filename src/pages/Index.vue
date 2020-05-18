@@ -71,7 +71,8 @@ export default {
     };
 
     const req = await fetch(
-      "https://b.optima-osvita.org/webservice/rest/server.php?moodlewsrestformat=json",
+      localStorage.baseurl +
+        "/webservice/rest/server.php?moodlewsrestformat=json",
       requestOptions
     );
 

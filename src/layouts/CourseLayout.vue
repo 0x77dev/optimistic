@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header color="black" elevated>
       <q-toolbar>
         <q-toolbar-title>
           ✍️ Оптимист

@@ -10,6 +10,13 @@
             <q-form class="q-gutter-md">
               <q-input
                 square
+                v-model="baseurl"
+                :color="darkMode ? 'white' : 'primary'"
+                type="url"
+                label="🕸 Базовый путь (без / в конце)"
+              />
+              <q-input
+                square
                 v-model="email"
                 :color="darkMode ? 'white' : 'primary'"
                 type="email"
@@ -54,7 +61,10 @@ export default {
       notice:
         "🔐 Пароль не передается третим лицам🚶‍♀️, все взаимодействия проводятся напрямую с серверами оптимы 🤝.",
       email: "",
-      password: ""
+      password: "",
+      baseurl: localStorage.baseurl
+        ? localStorage.baseurl
+        : "https://b.optima-osvita.org"
     };
   },
   computed: {
@@ -66,6 +76,16 @@ export default {
         Dark.set(value);
       }
     }
+  },
+  watch: {
+    baseurl(value) {
+      localStorage.baseurl = value;
+    }
+  },
+  beforeMount() {
+    localStorage.baseurl = localStorage.baseurl
+      ? localStorage.baseurl
+      : "https://b.optima-osvita.org";
   },
   methods: {
     async login() {
@@ -84,7 +104,7 @@ export default {
       };
 
       const req = await fetch(
-        "https://b.optima-osvita.org/login/token.php?service=moodle_mobile_app",
+        localStorage.baseurl + "/login/token.php?service=moodle_mobile_app",
         requestOptions
       );
 
