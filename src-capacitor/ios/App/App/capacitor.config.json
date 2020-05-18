@@ -1,0 +1,7 @@
+{
+  "appId": "dev.marinenko.optimistic",
+  "appName": "Optimistic",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "moodleclient",
+  "version": "0.0.1",
+  "description": "An Optima School better client.",
+  "author": "Mikhail Marynenko <0x77dev@protonmail.com>",
+  "private": true,
+  "dependencies": {
+    "@capacitor/cli": "^1.0.0",
+    "@capacitor/core": "^1.0.0",
+    "@capacitor/ios": "^2.1.0"
+  }
+}
