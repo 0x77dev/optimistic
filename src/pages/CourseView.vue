@@ -19,6 +19,7 @@
               :key="module.id"
               clickable
               v-ripple
+              @click="open(module.url, '_blank')"
             >
               <q-item-section side top>
                 <q-checkbox disable :value="module.completion > 0" />
@@ -72,6 +73,11 @@ export default {
     );
 
     this.course = await req.json();
+  },
+  methods: {
+    open(...args) {
+      window.open(...args);
+    }
   }
 };
 </script>
