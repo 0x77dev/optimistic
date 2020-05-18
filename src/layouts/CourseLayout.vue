@@ -23,6 +23,9 @@
 
     <q-page-container>
       <router-view />
+      <q-page-sticky position="bottom-right" :offset="[18, 18]">
+        <q-chip color="red">Beta</q-chip>
+      </q-page-sticky>
     </q-page-container>
   </q-layout>
 </template>
