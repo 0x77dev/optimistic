@@ -13,6 +13,7 @@
         </div>
         <q-toggle color="yellow" dark v-model="darkMode"></q-toggle>
         {{ !darkMode ? "☀️" : "🌒" }}
+        <q-btn @click="signout" flat text>Выйти</q-btn>
       </q-toolbar>
     </q-header>
 
@@ -63,6 +64,14 @@ export default {
 
     this.info = await req.json();
     localStorage.userid = this.info.userid;
+  },
+  methods: {
+    signout() {
+      delete localStorage.token;
+      delete localStorage.private;
+      delete localStorage.baseurl;
+      this.$router.replace("/login");
+    }
   }
 };
 </script>
