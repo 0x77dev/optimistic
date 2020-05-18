@@ -5,8 +5,12 @@
         <q-toolbar-title>
           ✍️ Оптимист / Авторизация
         </q-toolbar-title>
-        <q-toggle color="yellow" dark v-model="darkMode"></q-toggle>
-        {{ !darkMode ? "☀️" : "🌒" }}
+        <q-toggle
+          :icon="!darkMode ? '🌒' : '☀️'"
+          color="black"
+          dark
+          v-model="darkMode"
+        ></q-toggle>
       </q-toolbar>
     </q-header>
 

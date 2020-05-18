@@ -2,17 +2,22 @@
   <q-layout view="lHh Lpr lFf">
     <q-header color="black" elevated>
       <q-toolbar>
-        <q-toolbar-title>
-          ✍️ Оптимист
+        <q-btn
+          @click="$router.go(-1)"
+          flat
+          round
+          dense
+          icon="keyboard_arrow_left"
+        />
+        <q-toolbar-title style="text-align: center;margin-left: 5%;">
+          ✍️ 📚 🎓
         </q-toolbar-title>
-        <div>
-          <q-avatar size="md">
-            <img :src="info.userpictureurl" />
-          </q-avatar>
-          {{ " " + info.fullname + " " }}
-        </div>
-        <q-toggle color="yellow" dark v-model="darkMode"></q-toggle>
-        {{ !darkMode ? "☀️" : "🌒" }}
+        <q-toggle
+          :icon="!darkMode ? '🌒' : '☀️'"
+          color="black"
+          dark
+          v-model="darkMode"
+        ></q-toggle>
       </q-toolbar>
     </q-header>
 
@@ -41,6 +46,7 @@ export default {
     };
   },
   async beforeMount() {
+    this.$q.loading.show();
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
@@ -63,6 +69,19 @@ export default {
 
     this.info = await req.json();
     localStorage.userid = this.info.userid;
+    this.$q.loading.hide();
   }
 };
 </script>
+<style>
+#q-app
+  > div
+  > header
+  > div.q-toolbar.row.no-wrap.items-center
+  > div
+  > div
+  > div.q-toggle__thumb.absolute.flex.flex-center.no-wrap
+  > i {
+  opacity: 1;
+}
+</style>

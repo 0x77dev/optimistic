@@ -12,7 +12,7 @@
       </q-card-section>
 
       <q-card-section>
-        <div v-html="detail.summary"></div>
+        <div class="contents" v-html="detail.summary"></div>
         <div class="q-pa-md">
           <q-list>
             <q-item
@@ -20,7 +20,7 @@
               :key="module.id"
               clickable
               v-ripple
-              @click="open(module.url, '_blank')"
+              @click="$router.push('/course/lesson/' + module.instance)"
             >
               <q-item-section side top>
                 <q-checkbox disable :value="module.completion > 0" />
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { Loading } from "quasar";
 export default {
   props: ["courseid"],
   name: "PageCourseView",
@@ -53,6 +54,7 @@ export default {
     };
   },
   async beforeMount() {
+    Loading.show();
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
@@ -75,6 +77,7 @@ export default {
     );
 
     this.course = await req.json();
+    Loading.hide();
   },
   methods: {
     open(...args) {

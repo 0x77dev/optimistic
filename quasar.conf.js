@@ -49,9 +49,9 @@ module.exports = function(/* ctx */) {
       directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: ["Loading"],
       config: {
-        dark: 'auto',
+        dark: "auto",
         brand: {
           primary: "#2b2d42",
           secondary: "#8d99ae",
@@ -110,7 +110,7 @@ module.exports = function(/* ctx */) {
       open: true // opens browser window automatically
     },
 
-    // animations: 'all', // --- includes all animations
+    animations: "all", // --- includes all animations
     // https://quasar.dev/options/animations
     animations: [],
 

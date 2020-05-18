@@ -3,10 +3,31 @@ const routes = [
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/Index.vue") },
+      { path: "", component: () => import("pages/Index.vue") }
+      // {
+      //   path: "/course/:courseid",
+      //   component: () => import("pages/CourseView.vue"),
+      //   props: true
+      // },
+      // {
+      //   path: "/course/lesson/:lessonid",
+      //   component: () => import("pages/LessonView.vue"),
+      //   props: true
+      // }
+    ]
+  },
+  {
+    path: "/",
+    component: () => import("layouts/CourseLayout.vue"),
+    children: [
       {
         path: "/course/:courseid",
         component: () => import("pages/CourseView.vue"),
+        props: true
+      },
+      {
+        path: "/course/lesson/:lessonid",
+        component: () => import("pages/LessonView.vue"),
         props: true
       }
     ]

@@ -9,11 +9,15 @@
           <q-avatar size="md">
             <img :src="info.userpictureurl" />
           </q-avatar>
-          {{ " " + info.fullname + " " }}
+          {{ " " + info.firstname + " " }}
         </div>
-        <q-toggle color="yellow" dark v-model="darkMode"></q-toggle>
-        {{ !darkMode ? "☀️" : "🌒" }}
-        <q-btn @click="signout" flat text>Выйти</q-btn>
+        <q-toggle
+          :icon="!darkMode ? '🌒' : '☀️'"
+          color="black"
+          dark
+          v-model="darkMode"
+        ></q-toggle>
+        <q-btn @click="signout" flat round dense icon="exit_to_app" />
       </q-toolbar>
     </q-header>
 
