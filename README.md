@@ -2,6 +2,9 @@
 
 # ✍️ Optimistic (moodleclient)
 
+## Project is no longer maintained
+[Optima School](https://optima.school) has made a lot of improvements last year, so now their web interface rendering is fast enough and usability is a lot more better that this mobile client can provide to the end student.
+
 Vue.js Moodle Client based on moodle mobile api [(webservices)](https://docs.moodle.org/dev/Web_service_API_functions).
 
 ![GitHub issues](https://img.shields.io/github/issues/0x77dev/optimistic) ![GitHub pull requests](https://img.shields.io/github/issues-pr/0x77dev/optimistic) ![GitHub](https://img.shields.io/github/license/0x77dev/optimistic) ![GitHub contributors](https://img.shields.io/github/contributors/0x77dev/optimistic) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/0x77dev/optimistic) ![GitHub package.json version](https://img.shields.io/github/package-json/v/0x77dev/optimistic)
